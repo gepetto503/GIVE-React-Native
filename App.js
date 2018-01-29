@@ -1,49 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TabNavigator } from 'react-navigation';
 
-//these import classes for each component
+//import components.  they're put into the main app render function in the form of custom elements
 import TitleBar from './TitleBar';
-import MainView from './MainView';
-import BottomNav from './BottomNav';
+//MainScreenNavigator holds the routes and imports the individual screens.
+import MainScreenNavigator from './MainScreenNavigator';
 
-
-class ProfileScreen extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>Profile Stuff</Text>
-      </View>
-    );
-  }
-}
-
-class SearchScreen extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>Search Stuff</Text>
-      </View>
-    );
-  }
-}
-
-class SocialScreen extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>Social Stuff</Text>
-      </View>
-    );
-  }
-}
-
-//creates a navigator
-const MainScreenNavigator = TabNavigator({
-  Profile: { screen: ProfileScreen },
-  Search: { screen: SearchScreen },
-  Social: { screen: SocialScreen }
-});
 
 export default class App extends React.Component {
   render() {
@@ -58,7 +20,6 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: 'red',
     borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between'
